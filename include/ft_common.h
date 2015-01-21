@@ -3,6 +3,9 @@
 
 # include <unistd.h>
 
+typedef enum e_bool	t_bool;
+enum e_bool { true = 1, false = 0 };
+
 # define GNL_BUFSIZE 1024
 
 size_t		ft_strlen(const char *s);

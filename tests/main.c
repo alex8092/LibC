@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "ft_common.h"
 #include "ft_string.h"
+#include "ft_printer.h"
 
 int	main(void)
 {
@@ -10,9 +11,8 @@ int	main(void)
 	int i = 0;
 	for (;i < 4; ++i)
 		ft_string_insert(s, "Heh", i);
-	printf("%s\n", s->str);
-	ft_string_clear(s);
-	printf("clear: %s\n", s->str);
+	ft_printer()->autoflush(true);
+	ft_printer_init(1)->adds(s)->addc('\n');
 	ft_string_delptr(&s);
 	return (0);
 }

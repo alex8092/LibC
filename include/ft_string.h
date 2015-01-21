@@ -21,6 +21,9 @@ t_string	*ft_string_reserve(t_string *s, size_t size);
 t_string	*ft_string_insert(t_string *s, const char *str, size_t index);
 t_string	*ft_string_insertn(t_string *s, const char *str, size_t size,\
 			size_t index);
+t_string	*ft_string_replacen(t_string *s, size_t index, size_t size,\
+								const char *str, size_t size_str);
+t_string	*ft_string_substr(const t_string *s, size_t index, size_t size);
 t_string	*ft_string_clear(t_string *s);
 void		ft_string_del(t_string *s);
 void		ft_string_delptr(t_string **s);
