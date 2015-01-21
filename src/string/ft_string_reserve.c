@@ -1,0 +1,31 @@
+#include "ft_string.h"
+#include "ft_common.h"
+#include <stdlib.h>
+
+t_string	*ft_string_reserve(t_string *s, size_t size)
+{
+	char	*news;
+
+	news = (char *)malloc(size + 1);
+	if (news)
+	{
+		if (s->size <= size)
+		{
+			if (s->str)
+				ft_strncpy(news, s->str, s->size);
+			news[s->size] = 0;
+		}
+		else
+		{
+			if (s->str)
+				ft_strncpy(news, s->str, size);
+			news[size] = 0;
+			s->size = size;
+		}
+		if (s->str)
+			free(s->str);
+		s->str = news;
+		s->reserve = size;
+	}
+	return (s);
+}
