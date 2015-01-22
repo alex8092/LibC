@@ -86,16 +86,3 @@ char				*ft_strchr(const char *str, int c)
 	}
 	return (NULL);
 }
-
-// char				*ft_strchr(const char *str, int c)
-// {
-// 	size_t	index = 0;
-
-// 	while (str[index])
-// 	{
-// 		if (str[index] == c)
-// 			return ((char *)(str + index));
-// 		++index;
-// 	}
-// 	return (NULL);
-// }

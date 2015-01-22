@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printer.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/01/22 06:52:41 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/22 06:53:33 by amerle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_PRINTER_H
 # define FT_PRINTER_H
 
@@ -15,7 +27,7 @@ struct			s_printer
 	char		buffer[PRINTER_BUFFER_SIZE];
 	size_t		size;
 	int			fd;
-	t_bool		_autoflush;
+	t_bool		v_autoflush;
 	t_printer	*(*init)(int fd);
 	t_printer	*(*autoflush)(t_bool);
 	t_printer	*(*add)(const char *);

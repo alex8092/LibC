@@ -1,10 +1,22 @@
-#ifndef COMMON_H
-# define COMMON_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_common.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/01/22 06:51:23 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/22 06:52:03 by amerle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_COMMON_H
+# define FT_COMMON_H
 
 # include <unistd.h>
 
 typedef enum e_bool	t_bool;
-enum e_bool { true = 1, false = 0 };
+enum	e_bool { true = 1, false = 0 };
 
 # define GNL_BUFSIZE 1024
 
