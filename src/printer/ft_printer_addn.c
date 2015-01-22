@@ -3,9 +3,11 @@
 
 t_printer	*ft_printer_addn(const char *str, size_t size)
 {
-	t_printer *const	inst = ft_printer();
+	static t_printer	*inst = 0;
 	char				*tmp;
 
+	if (!inst)
+		inst = ft_printer();
 	if (inst->size + size >= PRINTER_BUFFER_SIZE)
 		ft_printer_flush();
 	ft_memcpy((void *)inst->buffer + inst->size, (const void *)str, size);

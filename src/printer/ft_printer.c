@@ -14,6 +14,7 @@ t_printer	*ft_printer(void)
 		_inst.add = ft_printer_add;
 		_inst.addn = ft_printer_addn;
 		_inst.adds = ft_printer_adds;
+		_inst.addss = ft_printer_addss;
 		_inst.addc = ft_printer_addc;
 		_inst.flushn = ft_printer_flushn;
 		_inst.flush = ft_printer_flush;
