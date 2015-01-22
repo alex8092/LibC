@@ -33,6 +33,8 @@ struct			s_sstream
 	t_sstream	*(*addl)(t_sstream*, long int);
 	t_sstream	*(*addx)(t_sstream*, int);
 	t_sstream	*(*addlx)(t_sstream*, long int);
+	t_sstream	*(*addo)(t_sstream*, int);
+	t_sstream	*(*addlo)(t_sstream*, long int);
 };
 
 t_sstream		*ft_sstream_new(void);
@@ -47,6 +49,8 @@ t_sstream		*ft_sstream_addi(t_sstream *ss, int i);
 t_sstream		*ft_sstream_addl(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_addul(t_sstream *ss, unsigned long int i);
 t_sstream		*ft_sstream_addx(t_sstream *ss, int i);
+t_sstream		*ft_sstream_addo(t_sstream *ss, int i);
+t_sstream		*ft_sstream_addlo(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_reserve(t_sstream *ss, size_t size);
 void			ft_sstream_del(t_sstream *ss);

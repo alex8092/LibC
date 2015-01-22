@@ -18,6 +18,8 @@ static void	f_init_2(t_sstream *ss)
 {
 	ss->addx = ft_sstream_addx;
 	ss->addlx = ft_sstream_addlx;
+	ss->addo = ft_sstream_addo;
+	ss->addlo = ft_sstream_addlo;
 }
 
 t_sstream	*ft_sstream_new(void)
