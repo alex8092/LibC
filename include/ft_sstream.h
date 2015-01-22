@@ -44,6 +44,8 @@ t_sstream		*ft_sstream_addui(t_sstream *ss, unsigned int i);
 t_sstream		*ft_sstream_addi(t_sstream *ss, int i);
 t_sstream		*ft_sstream_addl(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_addul(t_sstream *ss, unsigned long int i);
+t_sstream		*ft_sstream_addx(t_sstream *ss, int i);
+t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_reserve(t_sstream *ss, size_t size);
 void			ft_sstream_del(t_sstream *ss);
 
