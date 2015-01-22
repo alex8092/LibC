@@ -1,6 +1,8 @@
 #include "ft_sstream_private.h"
 #include "ft_common.h"
 
+const char	*g_hexmap = "0123456789abcdefgh";
+
 t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 {
 	t_bool	first;
@@ -14,7 +16,7 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 		{
 			if (!first || value)
 			{
-				ft_sstream_addc(ss, value + '0');
+				ft_sstream_addc(ss, g_hexmap[(int)value]);
 				first = false;
 			}
 		}
@@ -22,7 +24,7 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);
 		if (!first || (first && value & 0xF))
 		{
-			ft_sstream_addc(ss, value + '0');
+			ft_sstream_addc(ss, g_hexmap[(int)value]);
 			first = false;
 		}
 		i <<= 4;

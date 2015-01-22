@@ -13,7 +13,7 @@ int	main(void)
 	t_string	*str = ft_string_cpy(ss->str);
 	ft_string_del(str);
 	ss->addw(ss, L" muhahaha")->addc(ss, '\n');
-	ft_sstream_addlx(ss, 0x4556)->addc(ss, '\n');
+	ft_sstream_addlx(ss, 0x45af56)->addc(ss, '\n');
 	write(1, ss->str->str, ss->str->size);
 	ft_printer_init(1)->add("str: ")->adds(ss->str)->addc('\n');
 	ft_printer_init(1)->add("clear: ")->adds(ft_sstream_clear(ss)->str)->addc('\n');
