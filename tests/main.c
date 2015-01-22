@@ -8,7 +8,6 @@
 
 int	main(void)
 {
-	printf("float: %f\n", (float)4);
 	t_sstream	*ss = ft_sstream_new();
 	ss->addi(ss, 10)->addc(ss, ' ')->add(ss, "Bonjour");
 	t_string	*str = ft_string_cpy(ss->str);
