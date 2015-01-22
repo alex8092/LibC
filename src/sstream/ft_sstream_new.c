@@ -29,6 +29,7 @@ t_sstream	*ft_sstream_new(void)
 		}
 		ss->clear = ft_sstream_clear;
 		ss->add = ft_sstream_add;
+		ss->addw = ft_sstream_addw;
 		ss->addn = ft_sstream_addn;
 		ss->addc = ft_sstream_addc;
 		ss->adds = ft_sstream_adds;

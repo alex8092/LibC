@@ -14,6 +14,7 @@
 # define FT_SSTREAM_H
 
 # include "ft_string.h"
+# include <wchar.h>
 
 typedef struct s_sstream	t_sstream;
 
@@ -22,6 +23,7 @@ struct			s_sstream
 	t_string	*str;
 	t_sstream	*(*clear)(t_sstream*);
 	t_sstream	*(*add)(t_sstream*, const char *);
+	t_sstream	*(*addw)(t_sstream*, const wchar_t *);
 	t_sstream	*(*addn)(t_sstream*, const char *, size_t);
 	t_sstream	*(*addc)(t_sstream*, const char);
 	t_sstream	*(*adds)(t_sstream*, t_string*);
@@ -34,6 +36,7 @@ struct			s_sstream
 t_sstream		*ft_sstream_new(void);
 t_sstream		*ft_sstream_clear(t_sstream *ss);
 t_sstream		*ft_sstream_add(t_sstream *ss, const char *str);
+t_sstream		*ft_sstream_addw(t_sstream *ss, const wchar_t *str);
 t_sstream		*ft_sstream_addn(t_sstream *ss, const char *str, size_t size);
 t_sstream		*ft_sstream_addc(t_sstream *ss, const char c);
 t_sstream		*ft_sstream_adds(t_sstream *ss, t_string *str);

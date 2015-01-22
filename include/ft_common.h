@@ -14,6 +14,7 @@
 # define FT_COMMON_H
 
 # include <unistd.h>
+# include <wchar.h>
 
 typedef enum e_bool	t_bool;
 enum	e_bool { true = 1, false = 0 };
@@ -21,6 +22,7 @@ enum	e_bool { true = 1, false = 0 };
 # define GNL_BUFSIZE 1024
 
 size_t		ft_strlen(const char *s);
+size_t		ft_wstrlen(const wchar_t *s);
 int			ft_strcmp(const char *s1, const char *s2);
 
 char		*ft_itoa(long int nbr);

@@ -42,6 +42,7 @@ SRCS = 	src/common/ft_atoi.c \
 		src/common/ft_strsplit.c \
 		src/common/ft_strstr.c \
 		src/common/ft_strsub.c \
+		src/common/ft_wstrlen.c \
 		src/printer/ft_printer.c \
 		src/printer/ft_printer_add.c \
 		src/printer/ft_printer_addc.c \
@@ -53,6 +54,7 @@ SRCS = 	src/common/ft_atoi.c \
 		src/printer/ft_printer_flushn.c \
 		src/printer/ft_printer_init.c \
 		src/sstream/ft_sstream_add.c \
+		src/sstream/ft_sstream_addw.c \
 		src/sstream/ft_sstream_addc.c \
 		src/sstream/ft_sstream_addi.c \
 		src/sstream/ft_sstream_addl.c \

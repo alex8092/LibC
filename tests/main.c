@@ -12,6 +12,8 @@ int	main(void)
 	ss->addi(ss, 10)->addc(ss, ' ')->add(ss, "Bonjour");
 	t_string	*str = ft_string_cpy(ss->str);
 	ft_string_del(str);
+	ss->addw(ss, L" muhahaha");
+	write(1, ss->str->str, ss->str->size);
 	ft_printer_init(1)->add("str: ")->adds(ss->str)->addc('\n');
 	ft_printer_init(1)->add("clear: ")->adds(ft_sstream_clear(ss)->str)->addc('\n');
 	ft_printer_flush();

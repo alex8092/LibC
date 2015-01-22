@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_string_appn.c                                   :+:      :+:    :+:   */
+/*   ft_sstream_addw.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/22 06:41:52 by amerle            #+#    #+#             */
-/*   Updated: 2015/01/22 06:41:52 by amerle           ###   ########.fr       */
+/*   Created: 2015/01/22 09:26:16 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/22 09:26:18 by amerle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
+#include "ft_sstream.h"
 #include "ft_common.h"
 
-t_string	*ft_string_appn(t_string *s, const char *str, size_t size)
+t_sstream	*ft_sstream_addw(t_sstream *ss, const wchar_t *str)
 {
-	if (s->size + size > s->reserve)
-		ft_string_reserve(s, s->size + size);
-	ft_memcpy((void *)(s->str + s->size), (const void *)str, size);
-	s->size += size;
-	s->str[s->size] = 0;
-	return (s);
+	const char	*cstr;
+
+	cstr = (const char *)str;
+	return (ft_sstream_addn(ss, cstr, ft_wstrlen(str) * sizeof(wchar_t)));
 }
