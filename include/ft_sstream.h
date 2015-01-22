@@ -8,6 +8,15 @@ typedef struct s_sstream	t_sstream;
 struct			s_sstream
 {
 	t_string	*str;
+	t_sstream	*(*clear)(t_sstream*);
+	t_sstream	*(*add)(t_sstream*, const char *);
+	t_sstream	*(*addn)(t_sstream*, const char *, size_t);
+	t_sstream	*(*addc)(t_sstream*, const char);
+	t_sstream	*(*adds)(t_sstream*, t_string*);
+	t_sstream	*(*addui)(t_sstream*, unsigned int);
+	t_sstream	*(*addi)(t_sstream*, int);
+	t_sstream	*(*addul)(t_sstream*, unsigned long int);
+	t_sstream	*(*addl)(t_sstream*, long int);
 };
 
 t_sstream		*ft_sstream_new(void);

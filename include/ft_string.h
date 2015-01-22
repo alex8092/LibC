@@ -29,6 +29,7 @@ t_string	*ft_string_replaces(t_string *s, size_t index, size_t size,\
 								t_string *str);
 t_string	*ft_string_substr(const t_string *s, size_t index, size_t size);
 t_string	*ft_string_clear(t_string *s);
+t_string	*ft_string_cpy(const t_string *s);
 ssize_t		ft_string_search(t_string *s, const char *str);
 ssize_t		ft_string_searchc(t_string *s, const char c);
 ssize_t		ft_string_searchs(t_string *s, t_string *search);
