@@ -22,8 +22,9 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(int) * 2);
-	while (i && ((value = ((i >> (sizeof(int) * 8 - 4)) & 0xF)) || !value))
+	while (i)
 	{
+		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);
 		if (!first || (first && value))
 		{
 			if (!first || value)
@@ -31,13 +32,6 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 				ft_sstream_addc(ss, g_hexmap[(int)value]);
 				first = false;
 			}
-		}
-		i <<= 4;
-		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);
-		if (!first || (first && value & 0xF))
-		{
-			ft_sstream_addc(ss, g_hexmap[(int)value]);
-			first = false;
 		}
 		i <<= 4;
 	}
