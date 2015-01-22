@@ -14,6 +14,12 @@
 #include "ft_common.h"
 #include <stdlib.h>
 
+static void	f_init_2(t_sstream *ss)
+{
+	ss->addx = ft_sstream_addx;
+	ss->addlx = ft_sstream_addlx;
+}
+
 t_sstream	*ft_sstream_new(void)
 {
 	t_sstream	*ss;
@@ -37,6 +43,7 @@ t_sstream	*ft_sstream_new(void)
 		ss->addi = ft_sstream_addi;
 		ss->addul = ft_sstream_addul;
 		ss->addl = ft_sstream_addl;
+		f_init_2(ss);
 	}
 	return (ss);
 }

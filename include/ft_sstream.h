@@ -31,6 +31,8 @@ struct			s_sstream
 	t_sstream	*(*addi)(t_sstream*, int);
 	t_sstream	*(*addul)(t_sstream*, unsigned long int);
 	t_sstream	*(*addl)(t_sstream*, long int);
+	t_sstream	*(*addx)(t_sstream*, int);
+	t_sstream	*(*addlx)(t_sstream*, long int);
 };
 
 t_sstream		*ft_sstream_new(void);
