@@ -19,10 +19,12 @@ t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i)
 {
 	t_bool	first;
 	char	val;
+	size_t	j;
 
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(long int) * 2);
-	while (i)
+	j = 0;
+	while (j < sizeof(long int) * 2)
 	{
 		val = ((i >> (sizeof(long int) * 8 - 4)) & 0xF);
 		if (!first || (first && val))
@@ -34,6 +36,7 @@ t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i)
 			}
 		}
 		i <<= 4;
+		++j;
 	}
 	return (ss);
 }

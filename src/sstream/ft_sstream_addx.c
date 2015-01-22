@@ -19,10 +19,12 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 {
 	t_bool	first;
 	char	value;
+	size_t	j;
 
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(int) * 2);
-	while (i)
+	j = 0;
+	while (j < sizeof(int) * 2)
 	{
 		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);
 		if (!first || (first && value))
@@ -34,6 +36,7 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 			}
 		}
 		i <<= 4;
+		++j;
 	}
 	return (ss);
 }
