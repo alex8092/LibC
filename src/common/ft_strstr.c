@@ -19,7 +19,7 @@ char	*ft_strstr(char *str, const char *find)
 
 	while ((tmp = ft_strchr(str, find[0])))
 	{
-		i = 0;
+		i = 1;
 		while (find[i] && find[i] == tmp[i])
 			++i;
 		if (!find[i])
