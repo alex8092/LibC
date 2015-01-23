@@ -24,17 +24,18 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(int) * 2);
 	j = 0;
+	if (i && ss->v_alternate_form && ss->v_upper)
+		ft_sstream_addn(ss, "0X", 2);
+	else if (i && ss->v_alternate_form)
+		ft_sstream_addn(ss, "0x", 2);
 	while (j < sizeof(int) * 2)
 	{
 		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);
 		value = (ss->v_upper && value > 9) ? value + 6 : value;
-		if (!first || (first && value))
+		if (!first || (first && (value || j == sizeof(int) * 2 - 1)))
 		{
-			if (!first || value)
-			{
-				ft_sstream_addc(ss, g_hexmap[(int)value]);
-				first = false;
-			}
+			ft_sstream_addc(ss, g_hexmap[(int)value]);
+			first = false;
 		}
 		i <<= 4;
 		++j;

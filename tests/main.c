@@ -10,10 +10,11 @@ int	main(void)
 {
 	t_sstream	*ss = ft_sstream_new();
 	ss->v_alternate_form = true;
-	ss->addo(ss, 100);
+	ss->v_upper = true;
+	ss->addx(ss, 0);
 	ft_printer()->addss(ss)->addc('\n');
 	ft_printer_flush();
 	ft_sstream_del(ss);
-	printf("%#o\n", 100);
+	printf("%#X\n", 0);
 	return (0);
 }
