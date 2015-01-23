@@ -9,10 +9,11 @@
 int	main(void)
 {
 	t_sstream	*ss = ft_sstream_new();
-	ss->addlo(ss, -9223372036854775807);
+	ss->v_alternate_form = true;
+	ss->addo(ss, 100);
 	ft_printer()->addss(ss)->addc('\n');
 	ft_printer_flush();
 	ft_sstream_del(ss);
-	printf("%lo\n", -9223372036854775807);
+	printf("%#o\n", 100);
 	return (0);
 }

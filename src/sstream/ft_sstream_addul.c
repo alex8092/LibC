@@ -42,5 +42,5 @@ t_sstream		*ft_sstream_addul(t_sstream *ss, unsigned long int i)
 		++index;
 	}
 	ft_string_appn(ss->str, nstr, n);
-	return (ss);
+	return (ft_sstream_reset_modifiers(ss));
 }

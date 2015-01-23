@@ -24,6 +24,7 @@ struct			s_sstream
 {
 	t_string	*str;
 	t_bool		v_upper;
+	t_bool		v_alternate_form;
 	t_sstream	*(*clear)(t_sstream*);
 	t_sstream	*(*add)(t_sstream*, const char *);
 	t_sstream	*(*addw)(t_sstream*, const wchar_t *);

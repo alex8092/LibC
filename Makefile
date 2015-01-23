@@ -71,6 +71,7 @@ SRCS = 	src/common/ft_atoi.c \
 		src/sstream/ft_sstream_del.c \
 		src/sstream/ft_sstream_new.c \
 		src/sstream/ft_sstream_reserve.c \
+		src/sstream/ft_sstream_reset_modifiers.c \
 		src/string/ft_string_app.c \
 		src/string/ft_string_appn.c \
 		src/string/ft_string_clear.c \

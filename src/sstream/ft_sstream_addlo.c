@@ -13,6 +13,14 @@
 #include "ft_sstream_private.h"
 #include "ft_common.h"
 
+static char	f_get_val(long int i, int j)
+{
+	if (j == sizeof(long int) * 8 - sizeof(long int) * 8 % 3)
+		return ((i >> j) & 0x1);
+	else
+		return ((i >> j) & 0x7);
+}
+
 t_sstream	*ft_sstream_addlo(t_sstream *ss, long int i)
 {
 	t_bool	first;
@@ -22,12 +30,11 @@ t_sstream	*ft_sstream_addlo(t_sstream *ss, long int i)
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(long int) * 8 / 3);
 	j = sizeof(long int) * 8 - sizeof(long int) * 8 % 3;
+	if (i && ss->v_alternate_form)
+		ft_sstream_addc(ss, '0');
 	while (j >= 0)
 	{
-		if (j == sizeof(long int) * 8 - sizeof(long int) * 8 % 3)
-			val = (i >> j) & 0x1;
-		else
-			val = (i >> j) & 0x7;
+		val = f_get_val(i, j);
 		if (!first || (first && val))
 		{
 			if (!first || val)
@@ -38,5 +45,5 @@ t_sstream	*ft_sstream_addlo(t_sstream *ss, long int i)
 		}
 		j -= 3;
 	}
-	return (ss);
+	return (ft_sstream_reset_modifiers(ss));
 }

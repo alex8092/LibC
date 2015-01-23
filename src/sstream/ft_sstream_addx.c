@@ -39,6 +39,5 @@ t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 		i <<= 4;
 		++j;
 	}
-	ss->v_upper = false;
-	return (ss);
+	return (ft_sstream_reset_modifiers(ss));
 }

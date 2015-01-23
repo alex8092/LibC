@@ -15,6 +15,7 @@
 
 # include "ft_sstream.h"
 
-void	ft_sstream_check_reserve(t_sstream *s, size_t size);
+void			ft_sstream_check_reserve(t_sstream *s, size_t size);
+t_sstream		*ft_sstream_reset_modifiers(t_sstream *ss);
 
 #endif
