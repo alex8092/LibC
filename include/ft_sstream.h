@@ -14,13 +14,16 @@
 # define FT_SSTREAM_H
 
 # include "ft_string.h"
+# include "ft_common.h"
 # include <wchar.h>
+# include <stdint.h>
 
 typedef struct s_sstream	t_sstream;
 
 struct			s_sstream
 {
 	t_string	*str;
+	t_bool		v_upper;
 	t_sstream	*(*clear)(t_sstream*);
 	t_sstream	*(*add)(t_sstream*, const char *);
 	t_sstream	*(*addw)(t_sstream*, const wchar_t *);
