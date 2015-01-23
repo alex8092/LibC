@@ -55,6 +55,7 @@ SRCS = 	src/common/ft_atoi.c \
 		src/printer/ft_printer_init.c \
 		src/sstream/ft_sstream_add.c \
 		src/sstream/ft_sstream_addw.c \
+		src/sstream/ft_sstream_addwn.c \
 		src/sstream/ft_sstream_addx.c \
 		src/sstream/ft_sstream_addlx.c \
 		src/sstream/ft_sstream_addo.c \
@@ -72,8 +73,15 @@ SRCS = 	src/common/ft_atoi.c \
 		src/sstream/ft_sstream_new.c \
 		src/sstream/ft_sstream_reserve.c \
 		src/sstream/ft_sstream_reset_modifiers.c \
+		src/sstream/ft_sstream_count_digits.c \
+		src/sstream/ft_sstream_count_hexa.c \
+		src/sstream/ft_sstream_intern_ui.c \
 		src/string/ft_string_app.c \
 		src/string/ft_string_appn.c \
+		src/string/ft_string_appc.c \
+		src/string/ft_string_appwc.c \
+		src/string/ft_string_appwn.c \
+		src/string/ft_string_appw.c \
 		src/string/ft_string_clear.c \
 		src/string/ft_string_cpy.c \
 		src/string/ft_string_del.c \

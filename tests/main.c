@@ -9,9 +9,8 @@
 int	main(void)
 {
 	t_sstream	*ss = ft_sstream_new();
-	ss->v_alternate_form = true;
-	ss->v_upper = true;
-	ss->addx(ss, 0);
+	ss->v_min_field_width = 5;
+	ss->addx(ss, 1000);
 	ft_printer()->addss(ss)->addc('\n');
 	ft_printer_flush();
 	ft_sstream_del(ss);

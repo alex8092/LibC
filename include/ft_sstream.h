@@ -25,9 +25,12 @@ struct			s_sstream
 	t_string	*str;
 	t_bool		v_upper;
 	t_bool		v_alternate_form;
+	size_t		v_min_field_width;
+	char		v_char_fill;
 	t_sstream	*(*clear)(t_sstream*);
 	t_sstream	*(*add)(t_sstream*, const char *);
 	t_sstream	*(*addw)(t_sstream*, const wchar_t *);
+	t_sstream	*(*addwn)(t_sstream*, const wchar_t *, size_t);
 	t_sstream	*(*addn)(t_sstream*, const char *, size_t);
 	t_sstream	*(*addc)(t_sstream*, const char);
 	t_sstream	*(*adds)(t_sstream*, t_string*);
@@ -45,6 +48,8 @@ t_sstream		*ft_sstream_new(void);
 t_sstream		*ft_sstream_clear(t_sstream *ss);
 t_sstream		*ft_sstream_add(t_sstream *ss, const char *str);
 t_sstream		*ft_sstream_addw(t_sstream *ss, const wchar_t *str);
+t_sstream		*ft_sstream_addwn(t_sstream *ss, const wchar_t *str,\
+								size_t size);
 t_sstream		*ft_sstream_addn(t_sstream *ss, const char *str, size_t size);
 t_sstream		*ft_sstream_addc(t_sstream *ss, const char c);
 t_sstream		*ft_sstream_adds(t_sstream *ss, t_string *str);

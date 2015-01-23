@@ -31,7 +31,7 @@ t_sstream	*ft_sstream_addo(t_sstream *ss, int i)
 	first = true;
 	ft_sstream_check_reserve(ss, sizeof(int) * 8 / 3);
 	if (i && ss->v_alternate_form)
-		ft_sstream_addc(ss, '0');
+		ft_string_appc(ss->str, '0');
 	j = sizeof(int) * 8 - sizeof(int) * 8 % 3;
 	while (j >= 0)
 	{
@@ -40,7 +40,7 @@ t_sstream	*ft_sstream_addo(t_sstream *ss, int i)
 		{
 			if (!first || val || j == 0)
 			{
-				ft_sstream_addc(ss, val + '0');
+				ft_string_appc(ss->str, val + '0');
 				first = false;
 			}
 		}

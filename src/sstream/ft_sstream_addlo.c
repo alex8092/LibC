@@ -31,7 +31,7 @@ t_sstream	*ft_sstream_addlo(t_sstream *ss, long int i)
 	ft_sstream_check_reserve(ss, sizeof(long int) * 8 / 3);
 	j = sizeof(long int) * 8 - sizeof(long int) * 8 % 3;
 	if (i && ss->v_alternate_form)
-		ft_sstream_addc(ss, '0');
+		ft_string_appc(ss->str, '0');
 	while (j >= 0)
 	{
 		val = f_get_val(i, j);
@@ -39,7 +39,7 @@ t_sstream	*ft_sstream_addlo(t_sstream *ss, long int i)
 		{
 			if (!first || val)
 			{
-				ft_sstream_addc(ss, val + '0');
+				ft_string_appc(ss->str, val + '0');
 				first = false;
 			}
 		}

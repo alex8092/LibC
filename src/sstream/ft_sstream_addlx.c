@@ -25,15 +25,15 @@ t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i)
 	ft_sstream_check_reserve(ss, sizeof(long int) * 2);
 	j = 0;
 	if (i && ss->v_alternate_form && ss->v_upper)
-		ft_sstream_addn(ss, "0X", 2);
+		ft_string_appn(ss->str, "0X", 2);
 	else if (i && ss->v_alternate_form)
-		ft_sstream_addn(ss, "0x", 2);
+		ft_string_appn(ss->str, "0x", 2);
 	while (j < sizeof(long int) * 2)
 	{
 		val = ((i >> (sizeof(long int) * 8 - 4)) & 0xF);
 		if (!first || (first && (val || j == sizeof(long int) * 2 - 1)))
 		{
-			ft_sstream_addc(ss, g_hexmap[(int)val]);
+			ft_string_appc(ss->str, g_hexmap[(int)val]);
 			first = false;
 		}
 		i <<= 4;

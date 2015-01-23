@@ -14,6 +14,7 @@
 # define FT_STRING_H
 
 # include <unistd.h>
+# include <wchar.h>
 
 typedef struct s_string	t_string;
 
@@ -29,6 +30,10 @@ t_string	*ft_string_news(const char *str);
 t_string	*ft_string_newr(size_t reserve);
 t_string	*ft_string_app(t_string *s, const char *str);
 t_string	*ft_string_appn(t_string *s, const char *str, size_t size);
+t_string	*ft_string_appc(t_string *s, const char c);
+t_string	*ft_string_appwc(t_string *s, wchar_t c);
+t_string	*ft_string_appwn(t_string *s, const wchar_t *str, size_t size);
+t_string	*ft_string_appw(t_string *s, const wchar_t *str);
 t_string	*ft_string_reserve(t_string *s, size_t size);
 t_string	*ft_string_insert(t_string *s, const char *str, size_t index);
 t_string	*ft_string_insertn(t_string *s, const char *str, size_t size,\

@@ -12,35 +12,23 @@
 
 #include "ft_sstream_private.h"
 
-static size_t	f_count_digits(unsigned long int i)
-{
-	size_t	n;
-
-	if (!i)
-		return (1);
-	n = 0;
-	while (i)
-	{
-		i /= 10;
-		++n;
-	}
-	return (n);
-}
-
 t_sstream		*ft_sstream_addul(t_sstream *ss, unsigned long int i)
 {
-	const size_t	n = f_count_digits(i);
-	char			nstr[n];
+	const size_t	n = ft_sstream_count_digits(i);
 	size_t			index;
 
-	ft_sstream_check_reserve(ss, 22);
-	index = 0;
-	while (index < n)
+	if (n < ss->v_min_field_width)
 	{
-		nstr[n - index - 1] = (i % 10) + '0';
-		i /= 10;
-		++index;
+		ft_sstream_check_reserve(ss, ss->v_min_field_width);
+		index = n;
+		while (index < ss->v_min_field_width)
+		{
+			ft_string_appc(ss->str, ss->v_char_fill);
+			++index;
+		}
 	}
-	ft_string_appn(ss->str, nstr, n);
+	else
+		ft_sstream_check_reserve(ss, n);
+	ft_sstream_intern_ui(ss, i, n);
 	return (ft_sstream_reset_modifiers(ss));
 }

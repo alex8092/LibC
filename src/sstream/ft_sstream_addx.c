@@ -15,19 +15,37 @@
 
 const char	*g_hexmap = "0123456789abcdefABCDEF";
 
+static void	f_get_alignment(t_sstream *ss, size_t n)
+{
+	size_t	index;
+
+	if (n < ss->v_min_field_width)
+	{
+		index = n;
+		while (index < ss->v_min_field_width)
+		{
+			ft_string_appc(ss->str, ss->v_char_fill);
+			++index;
+		}
+	}
+	else
+		ft_sstream_check_reserve(ss, n);
+}
+
 t_sstream	*ft_sstream_addx(t_sstream *ss, int i)
 {
-	t_bool	first;
-	char	value;
-	size_t	j;
+	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(int) * 2);
+	t_bool			first;
+	char			value;
+	size_t			j;
 
 	first = true;
-	ft_sstream_check_reserve(ss, sizeof(int) * 2);
+	f_get_alignment(ss, n);
 	j = 0;
 	if (i && ss->v_alternate_form && ss->v_upper)
-		ft_sstream_addn(ss, "0X", 2);
+		ft_string_appn(ss->str, "0X", 2);
 	else if (i && ss->v_alternate_form)
-		ft_sstream_addn(ss, "0x", 2);
+		ft_string_appn(ss->str, "0x", 2);
 	while (j < sizeof(int) * 2)
 	{
 		value = ((i >> (sizeof(int) * 8 - 4)) & 0xF);

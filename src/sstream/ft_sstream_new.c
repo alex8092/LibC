@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_sstream.h"
+#include "ft_sstream_private.h"
 #include "ft_common.h"
 #include <stdlib.h>
 
@@ -20,6 +20,8 @@ static void	f_init_2(t_sstream *ss)
 	ss->addlx = ft_sstream_addlx;
 	ss->addo = ft_sstream_addo;
 	ss->addlo = ft_sstream_addlo;
+	ss->addwn = ft_sstream_addwn;
+	ft_sstream_reset_modifiers(ss);
 }
 
 t_sstream	*ft_sstream_new(void)

@@ -15,8 +15,5 @@
 
 t_sstream	*ft_sstream_addw(t_sstream *ss, const wchar_t *str)
 {
-	const char	*cstr;
-
-	cstr = (const char *)str;
-	return (ft_sstream_addn(ss, cstr, ft_wstrlen(str) * sizeof(wchar_t)));
+	return (ft_sstream_addwn(ss, str, ft_wstrlen(str)));
 }
