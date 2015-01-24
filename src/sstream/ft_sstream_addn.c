@@ -14,20 +14,10 @@
 
 t_sstream	*ft_sstream_addn(t_sstream *ss, const char *str, size_t n)
 {
-	size_t	i;
-
-	if (n < ss->v_min_field_width)
-	{
-		ft_sstream_check_reserve(ss, ss->v_min_field_width);
-		i = n;
-		while (i < ss->v_min_field_width)
-		{
-			ft_string_appc(ss->str, ss->v_char_fill);
-			++i;
-		}
-	}
-	else
-		ft_sstream_check_reserve(ss, n);
+	if (ss->v_precision != 0 && n > ss->v_precision)
+		n = ss->v_precision;
+	ft_sstream_get_alignement(ss, n, false);
 	ft_string_appn(ss->str, str, n);
+	ft_sstream_get_alignement(ss, n, true);
 	return (ft_sstream_reset_modifiers(ss));
 }

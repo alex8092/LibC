@@ -16,7 +16,6 @@
 # include "ft_string.h"
 # include "ft_common.h"
 # include <wchar.h>
-# include <stdint.h>
 
 typedef struct s_sstream	t_sstream;
 
@@ -26,7 +25,11 @@ struct			s_sstream
 	t_bool		v_upper;
 	t_bool		v_alternate_form;
 	size_t		v_min_field_width;
+	size_t		v_precision;
 	char		v_char_fill;
+	t_bool		v_always_sign;
+	t_bool		v_left_align;
+	t_bool		v_space_or_sign;
 	t_sstream	*(*clear)(t_sstream*);
 	t_sstream	*(*add)(t_sstream*, const char *);
 	t_sstream	*(*addw)(t_sstream*, const wchar_t *);
