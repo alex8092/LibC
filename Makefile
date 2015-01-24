@@ -76,6 +76,8 @@ SRCS = 	src/common/ft_atoi.c \
 		src/sstream/ft_sstream_count_digits.c \
 		src/sstream/ft_sstream_count_hexa.c \
 		src/sstream/ft_sstream_intern_ui.c \
+		src/sstream/ft_sstream_get_alignement.c \
+		src/sstream/ft_sstream_count_octal.c \
 		src/string/ft_string_app.c \
 		src/string/ft_string_appn.c \
 		src/string/ft_string_appc.c \
