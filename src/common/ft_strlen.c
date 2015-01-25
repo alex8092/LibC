@@ -13,7 +13,6 @@
 #include "ft_common.h"
 #include <limits.h>
 #include <stdint.h>
-#include <stdio.h>
 
 static size_t	strlen_bis(const char *str, const char *cp)
 {

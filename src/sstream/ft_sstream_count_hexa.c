@@ -3,22 +3,23 @@
 size_t		ft_sstream_count_hexa(t_sstream *ss, long int i, size_t n)
 {
 	size_t	count;
-	int		j;
+	size_t	j;
 	char	val;
 	t_bool	first;
 
 	first = true;
 	count = (i && ss->v_alternate_form) ? 2 : 0;
-	j = n;
-	while (j >= 0)
+	j = 0;
+	while (j < n * 2)
 	{
-		val = ((i >> j) & 0xF);
-		if (!first || (first && (val || j == 0)))
+		val = ((i >> (n * 8 - 4)) & 0xF);
+		if (!first || (first && (val || j == n * 2 - 1)))
 		{
 			++count;
 			first = false;
 		}
-		j -= 4;
+		i <<= 4;
+		++j;
 	}
 	return (count);
 }

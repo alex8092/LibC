@@ -42,7 +42,7 @@ static void		f_fill_zero(t_sstream *ss, int i, size_t n)
 
 t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i)
 {
-	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(long int) * 2);
+	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(long int));
 	t_bool			first;
 	size_t			j;
 	size_t			reserve;
@@ -52,6 +52,7 @@ t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i)
 		reserve = (n - 2 < ss->v_precision) ? ss->v_precision + 2 : n;
 	else
 		reserve = (n < ss->v_precision) ? ss->v_precision : n;
+
 	ft_sstream_get_alignement(ss, reserve, false);
 	j = 0;
 	if (i && ss->v_alternate_form && ss->v_upper)

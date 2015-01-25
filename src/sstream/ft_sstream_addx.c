@@ -42,7 +42,7 @@ static void		f_fill_zero(t_sstream *ss, int i, size_t n)
 
 t_sstream		*ft_sstream_addx(t_sstream *ss, int i)
 {
-	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(int) * 2);
+	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(int));
 	t_bool			first;
 	size_t			j;
 	size_t			reserve;

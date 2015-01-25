@@ -12,7 +12,6 @@
 
 #include "ft_sstream_private.h"
 #include "ft_common.h"
-#include <stdio.h>
 
 # define SSTREAM_OCT_SIZE	sizeof(int) * 8 - sizeof(int) * 8 % 3
 
