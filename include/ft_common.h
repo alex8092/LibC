@@ -62,6 +62,6 @@ int			ft_findinarray(char *array, char c);
 int			ft_getnextline(int fd, char **line);
 int			ft_isnum(int c);
 
-long int	ft_atoi(char *number);
+long int	ft_atoi(const char *number);
 
 #endif

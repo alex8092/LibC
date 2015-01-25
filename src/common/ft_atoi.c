@@ -12,7 +12,7 @@
 
 #include "ft_common.h"
 
-long int	ft_atoi(char *number)
+long int	ft_atoi(const char *number)
 {
 	unsigned long int	res;
 	char				neg;
@@ -21,7 +21,7 @@ long int	ft_atoi(char *number)
 	if (number[0] == '-')
 		++number;
 	res = 0;
-	while (*number)
+	while (*number && *number >= '0' && *number <= '9')
 	{
 		res *= 10;
 		res += *number - '0';
