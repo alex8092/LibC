@@ -65,6 +65,7 @@ t_sstream		*ft_sstream_addo(t_sstream *ss, int i);
 t_sstream		*ft_sstream_addlo(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_addlx(t_sstream *ss, long int i);
 t_sstream		*ft_sstream_reserve(t_sstream *ss, size_t size);
+t_sstream		*ft_sstream_reset_modifiers(t_sstream *ss);
 void			ft_sstream_del(t_sstream *ss);
 
 #endif
