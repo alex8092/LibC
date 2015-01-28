@@ -21,6 +21,10 @@ static void	f_init_2(t_sstream *ss)
 	ss->addo = ft_sstream_addo;
 	ss->addlo = ft_sstream_addlo;
 	ss->addwn = ft_sstream_addwn;
+	ss->addll = ft_sstream_addll;
+	ss->addull = ft_sstream_addull;
+	ss->addllx = ft_sstream_addllx;
+	ss->addllo = ft_sstream_addllo;
 	ft_sstream_reset_modifiers(ss);
 }
 

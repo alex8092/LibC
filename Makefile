@@ -58,15 +58,19 @@ SRCS = 	src/common/ft_atoi.c \
 		src/sstream/ft_sstream_addwn.c \
 		src/sstream/ft_sstream_addx.c \
 		src/sstream/ft_sstream_addlx.c \
+		src/sstream/ft_sstream_addllx.c \
 		src/sstream/ft_sstream_addo.c \
 		src/sstream/ft_sstream_addlo.c \
+		src/sstream/ft_sstream_addllo.c \
 		src/sstream/ft_sstream_addc.c \
 		src/sstream/ft_sstream_addi.c \
 		src/sstream/ft_sstream_addl.c \
+		src/sstream/ft_sstream_addll.c \
 		src/sstream/ft_sstream_addn.c \
 		src/sstream/ft_sstream_adds.c \
 		src/sstream/ft_sstream_addui.c \
 		src/sstream/ft_sstream_addul.c \
+		src/sstream/ft_sstream_addull.c \
 		src/sstream/ft_sstream_check_reserve.c \
 		src/sstream/ft_sstream_clear.c \
 		src/sstream/ft_sstream_del.c \

@@ -1,6 +1,6 @@
 #include "ft_sstream_private.h"
 
-void	ft_sstream_intern_ui(t_sstream *ss, unsigned long int i, size_t n)
+void	ft_sstream_intern_ui(t_sstream *ss, unsigned long long i, size_t n)
 {
 	size_t			index;
 	char			nstr[n];

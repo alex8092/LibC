@@ -29,7 +29,7 @@ static t_bool	f_perform_hexa(t_sstream *ss, long int i, int j, t_bool first)
 	return (first);
 }
 
-static void		f_fill_zero(t_sstream *ss, int i, size_t n)
+static void		f_fill_zero(t_sstream *ss, long int i, size_t n)
 {
 	if (i && ss->v_alternate_form)
 		n -= 2;

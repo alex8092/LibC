@@ -1,6 +1,6 @@
 #include "ft_sstream_private.h"
 
-size_t		ft_sstream_count_hexa(t_sstream *ss, long int i, size_t n)
+size_t		ft_sstream_count_hexa(t_sstream *ss, long long i, size_t n)
 {
 	size_t	count;
 	size_t	j;

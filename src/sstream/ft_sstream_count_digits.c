@@ -1,6 +1,6 @@
 #include "ft_sstream_private.h"
 
-size_t			ft_sstream_count_digits(unsigned long int i)
+size_t			ft_sstream_count_digits(unsigned long long i)
 {
 	size_t	n;
 

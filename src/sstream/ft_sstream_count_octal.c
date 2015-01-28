@@ -1,6 +1,6 @@
 #include "ft_sstream_private.h"
 
-static char	f_get_val(long int i, int j, size_t n, char mask)
+static char	f_get_val(long long i, int j, size_t n, char mask)
 {
 	if (j == (int)n)
 		return ((i >> j) & mask);
@@ -8,7 +8,7 @@ static char	f_get_val(long int i, int j, size_t n, char mask)
 		return ((i >> j) & 0x7);
 }
 
-size_t		ft_sstream_count_octal(t_sstream *ss, long int i, size_t n,\
+size_t		ft_sstream_count_octal(t_sstream *ss, long long i, size_t n,\
 									char mask)
 {
 	size_t	count;
