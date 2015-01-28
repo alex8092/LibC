@@ -6,14 +6,14 @@
 /*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 11:29:42 by amerle            #+#    #+#             */
-/*   Updated: 2015/01/22 11:29:44 by amerle           ###   ########.fr       */
+/*   Updated: 2015/01/28 06:06:23 by amerle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sstream_private.h"
 #include "ft_common.h"
 
-# define SSTREAM_OCT_SIZE	sizeof(int) * 8 - sizeof(int) * 8 % 3
+#define SSTREAM_OCT_SIZE	sizeof(int) * 8 - sizeof(int) * 8 % 3
 
 static char	f_get_val(int i, int j)
 {

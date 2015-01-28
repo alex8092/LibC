@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sstream_addllx.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/01/28 06:04:26 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/28 06:04:29 by amerle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_sstream_private.h"
 
 extern const char	*g_hexmap;
@@ -30,22 +42,21 @@ static void		f_fill_zero(t_sstream *ss, long long i, size_t n)
 t_sstream		*ft_sstream_addllx(t_sstream *ss, long long i)
 {
 	const size_t	n = ft_sstream_count_hexa(ss, i, sizeof(long long));
+	const char		*add_str;
 	t_bool			first;
 	size_t			j;
 	size_t			reserve;
 
 	first = true;
+	add_str = (ss->v_upper) ? "0X" : "0x";
 	if (i && ss->v_alternate_form)
 		reserve = (n - 2 < ss->v_precision) ? ss->v_precision + 2 : n;
 	else
 		reserve = (n < ss->v_precision) ? ss->v_precision : n;
-
 	ft_sstream_get_alignement(ss, reserve, false);
 	j = 0;
-	if (i && ss->v_alternate_form && ss->v_upper)
-		ft_string_appn(ss->str, "0X", 2);
-	else if (i && ss->v_alternate_form)
-		ft_string_appn(ss->str, "0x", 2);
+	if (i && ss->v_alternate_form)
+		ft_string_appn(ss->str, add_str, 2);
 	f_fill_zero(ss, i, n);
 	while (j < sizeof(long long) * 2)
 	{

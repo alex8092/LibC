@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sstream_addllo.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/01/28 06:04:43 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/28 06:04:56 by amerle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_sstream_private.h"
 
-# define SSTREAM_LLOCT_SIZE	sizeof(long long) * 8 - sizeof(long long) * 8 % 3
+#define SSTREAM_LLOCT_SIZE	sizeof(long long) * 8 - sizeof(long long) * 8 % 3
 
 static char	f_get_val(long long i, int j)
 {

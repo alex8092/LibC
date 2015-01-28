@@ -6,14 +6,14 @@
 /*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/22 11:29:50 by amerle            #+#    #+#             */
-/*   Updated: 2015/01/22 11:29:52 by amerle           ###   ########.fr       */
+/*   Updated: 2015/01/28 06:05:12 by amerle           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_sstream_private.h"
 #include "ft_common.h"
 
-# define SSTREAM_LOCT_SIZE	sizeof(long int) * 8 - sizeof(long int) * 8 % 3
+#define SSTREAM_LOCT_SIZE	sizeof(long int) * 8 - sizeof(long int) * 8 % 3
 
 static char	f_get_val(long int i, int j)
 {

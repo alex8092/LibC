@@ -1,4 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_sstream_addwn.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: amerle <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/01/28 06:12:34 by amerle            #+#    #+#             */
+/*   Updated: 2015/01/28 06:12:34 by amerle           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_sstream_private.h"
+#include <wchar.h>
+
+#define SIZEOFW	sizeof(wchar_t)
 
 static void	f_get_alignement(t_sstream *ss, size_t n, t_bool end)
 {
@@ -9,7 +24,7 @@ static void	f_get_alignement(t_sstream *ss, size_t n, t_bool end)
 	{
 		tmp = ss->v_min_field_width;
 		if (!end)
-			ft_sstream_check_reserve(ss, tmp * sizeof(wchar_t));
+			ft_sstream_check_reserve(ss, tmp * SIZEOFW);
 		if ((!end && ss->v_left_align) || (end && !ss->v_left_align))
 			return ;
 		index = n;
@@ -20,7 +35,7 @@ static void	f_get_alignement(t_sstream *ss, size_t n, t_bool end)
 		}
 	}
 	else if (!end)
-		ft_sstream_check_reserve(ss, n * sizeof(wchar_t));
+		ft_sstream_check_reserve(ss, n * SIZEOFW);
 }
 
 t_sstream	*ft_sstream_addwn(t_sstream *ss, const wchar_t *str,\
