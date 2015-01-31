@@ -5,19 +5,18 @@
 #include "ft_printer.h"
 #include "ft_vector.h"
 #include "ft_sstream.h"
+#include "ft_flagger.h"
 
-int	main(void)
+int	main(int ac, char **av)
 {
-	t_sstream	*ss = ft_sstream_new();
-	// ss->v_min_field_width = 10;
-	// ss->v_precision = 5;
-	// ss->v_left_align = true;
-	// ss->v_space_or_sign = true;
-	// ss->v_alternate_form = true;
-	ss->addllo(ss, -1);
-	ft_printer()->addss(ss)->addc('\n');
-	ft_printer_flush();
-	ft_sstream_del(ss);
-	printf("%llo\n", (long long)-1);
+	t_flagger	*f = ft_flagger_new();
+	f->add(f, 'l', "list", false);
+	if (f->parse(f, ac, av))
+	{
+		printf("next: %s\n", av[f->cur_index]);
+	}
+	ft_flagger_del(f);
+	(void)ac;
+	(void)av;
 	return (0);
 }

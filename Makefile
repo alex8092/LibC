@@ -123,7 +123,11 @@ SRCS = 	src/common/ft_atoi.c \
 		src/vector/ft_vector_erase.c \
 		src/vector/ft_vector_new.c \
 		src/vector/ft_vector_newr.c \
-		src/vector/ft_vector_push.c
+		src/vector/ft_vector_push.c \
+		src/flagger/ft_flagger_del.c \
+		src/flagger/ft_flagger_new.c \
+		src/flagger/ft_flagger_add.c \
+		src/flagger/ft_flagger_parse.c
 
 OBJS = $(SRCS:.c=.o)
 
