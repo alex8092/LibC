@@ -32,5 +32,6 @@ t_vector	*ft_vector_clear(t_vector *v);
 t_vector	*ft_vector_clearfree(t_vector *v, void (*freefunc)());
 void		ft_vector_del(t_vector *v);
 void		ft_vector_delptr(t_vector **ptr);
+void		ft_vector_sort(t_vector *v, int (*cmp)());
 
 #endif

@@ -35,7 +35,7 @@ t_sstream	*ft_sstream_new(void)
 	ss = (t_sstream *)ft_memalloc(sizeof(t_sstream));
 	if (ss)
 	{
-		ss->str = ft_string_newr(0);
+		ss->str = ft_string_newr(1);
 		if (!ss->str)
 		{
 			free(ss);

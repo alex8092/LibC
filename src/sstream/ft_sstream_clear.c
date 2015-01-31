@@ -15,6 +15,10 @@
 t_sstream	*ft_sstream_clear(t_sstream *ss)
 {
 	if (ss->str)
-		ft_string_reserve(ss->str, 0);
+	{
+		ft_string_reserve(ss->str, 1);
+		ss->str->str[0] = 0;
+		ss->str->size = 0;
+	}
 	return (ss);
 }

@@ -23,12 +23,14 @@ struct			s_flagger
 	t_vector	*flags;
 	t_flagger	*(*add)(t_flagger*, char, const char *, t_bool);
 	t_bool		(*parse)(t_flagger *, int, char **);
+	t_bool		(*is_active)(t_flagger *f, char, const char *);
 	int			cur_index;
 };
 
 t_flagger		*ft_flagger_new(void);
 t_flagger		*ft_flagger_add(t_flagger *f, char s, const char *n, t_bool a);
 t_bool			ft_flagger_parse(t_flagger *f, int ac, char **av);
+t_bool			ft_flagger_is_active(t_flagger *f, char c, const char *name);
 void			ft_flagger_del(t_flagger *f);
 
 #endif

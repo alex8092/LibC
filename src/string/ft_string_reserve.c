@@ -18,7 +18,7 @@ t_string	*ft_string_reserve(t_string *s, size_t size)
 {
 	char	*news;
 
-	news = (char *)malloc(size + 1);
+	news = (char *)ft_memalloc(size + 1);
 	if (news)
 	{
 		if (s->size <= size)

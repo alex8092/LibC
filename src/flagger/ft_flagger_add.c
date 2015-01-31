@@ -10,7 +10,7 @@ t_flagger	*ft_flagger_add(t_flagger *f, char s, const char *n, t_bool arg)
 	{
 		opt->short_name = s;
 		opt->name = n;
-		opt->name_len = ft_strlen(n);
+		opt->name_len = (n) ? ft_strlen(n) : 0;
 		opt->has_arg = arg;
 		ft_vector_push(f->flags, (void *)opt);
 	}
