@@ -55,6 +55,8 @@ SRCS = 	src/common/ft_atoi.c \
 		src/common/ft_strstr.c \
 		src/common/ft_strsub.c \
 		src/common/ft_wstrlen.c \
+		src/common/ft_tolower.c \
+		src/common/ft_casestrcmp.c \
 		src/printer/ft_printer.c \
 		src/printer/ft_printer_add.c \
 		src/printer/ft_printer_addc.c \

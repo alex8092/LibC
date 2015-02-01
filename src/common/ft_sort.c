@@ -13,54 +13,34 @@
 #include "ft_common.h"
 #include <string.h>
 
-#define NORME_HACK size_t	r[] = { 0, 0, len - 1, 1 }
-
-static void		ft_swap(char **tab, size_t i, size_t j)
-{
-	char	*str;
-
-	str = tab[i];
-	tab[i] = tab[j];
-	tab[j] = str;
-}
-
-static size_t	ft_sort_bis(char **tab, size_t len, int (*cmp)())
-{
-	NORME_HACK;
-	if (len < 2)
-		return (0);
-	while ((r[1] < len / 2 && r[2] > 0) || (r[2] > len / 2 && r[1] < len))
-	{
-		if (r[3] == 1 && cmp(tab[r[0]], tab[r[2]]) > 0)
-		{
-			ft_swap(tab, r[0], r[2]);
-			r[0] = r[2]--;
-			r[3] = 2;
-		}
-		else if (r[3] == 2 && cmp(tab[r[1]], tab[r[0]]) > 0)
-		{
-			ft_swap(tab, r[0], r[1]);
-			r[0] = r[1]--;
-			r[3] = 1;
-		}
-		r[2] = (r[3] == 1) ? r[2] - 1 : r[2];
-		r[1] = (r[3] != 1) ? r[1] + 1 : r[1];
-	}
-	ft_sort_bis(tab, r[0], cmp);
-	ft_sort_bis(tab + r[0] + 1, len - r[0] - 1, cmp);
-	return (0);
-}
-
-char			**ft_sort(char **tab, int (*cmp)())
+static size_t	f_tab_len(char **tab)
 {
 	size_t	i;
 
 	i = 0;
 	while (tab[i])
 		++i;
-	if (cmp != NULL)
-		ft_sort_bis(tab, i, cmp);
-	else
-		ft_sort_bis(tab, i, ft_strcmp);
+	return (i);
+}
+
+char			**ft_sort(char **tab, int (*cmp)())
+{
+	const size_t	size = f_tab_len(tab);
+	size_t			i;
+	char			*tmp;
+
+	i = 0;
+	while (i < size - 1)
+	{
+		if (cmp(tab[i], tab[i + 1]) > 0)
+		{
+			tmp = tab[i];
+			tab[i] = tab[i + 1];
+			tab[i + 1] = tmp;
+			i = 0;
+		}
+		else
+			++i;
+	}
 	return (tab);
 }

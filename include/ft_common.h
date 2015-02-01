@@ -24,6 +24,9 @@ enum	e_bool { true = 1, false = 0 };
 size_t		ft_strlen(const char *s);
 size_t		ft_wstrlen(const wchar_t *s);
 int			ft_strcmp(const char *s1, const char *s2);
+int			ft_casestrcmp(const char *s1, const char *s2);
+
+int			ft_tolower(int c);
 
 char		*ft_itoa(long int nbr);
 char		*ft_strdup(const char *s);
